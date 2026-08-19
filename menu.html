@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Menu | CoffeeBug</title>
+</head>
+<body>
+   <header class="site-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">☕ CoffeeBug</a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html" data-page="index.html">Home</a>
+            <a href="menu.html" data-page="menu.html">Menu</a>
+            <a href="order.html" data-page="order.html">Order</a>
+            <a href="payment.html" data-page="payment.html">Payment</a>
+        </nav>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    </div>
+</header>
+    <section class="coffee-menu-page">
+
+    <!-- Logo -->
+
+    <div class="coffee-logo">
+
+        <h1>
+            CoffeeBug
+        </h1>
+
+        <p>Every Sip Has A Story</p>
+    </div>
+
+
+
+    <!-- Cards Container -->
+
+    <div class="coffee-slider">
+
+
+     <div class="coffee-cards">
+
+
+    <!-- Espresso Card -->
+    <div class="coffee-card-box">
+
+        <img src="images/expresso.jpg" class="coffee-img" alt="expresso">
+
+        <div class="card-overlay"></div>
+
+        <div class="card-content">
+
+            <h2>Espresso</h2>
+
+            <p class="coffee-detail">
+                Strong and bold coffee with rich aroma.
+                Perfect for deep coffee lovers.
+            </p>
+
+            <div class="coffee-info">
+                <span>☕ Size: Regular</span>
+                <span>🔥 Roast: Dark</span>
+                <span>⭐ Rating: 4.8</span>
+            </div>
+
+            <h3>$5.99</h3>
+                <a href="order.html?coffee=espresso" class="buy-btn">
+                    Buy Now
+                </a>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Cappuccino Card -->
+    <div class="coffee-card-box">
+
+        <img src="images/chapattachno.jpg" class="coffee-img" alt="Cappuccino">
+
+        <div class="card-overlay"></div>
+
+        <div class="card-content">
+
+            <h2>Cappuccino</h2>
+
+            <p class="coffee-detail">
+                Creamy milk foam with premium espresso
+                and smooth coffee flavour.
+            </p>
+
+            <div class="coffee-info">
+                <span>☕ Size: Large</span>
+                <span>🔥 Roast: Medium</span>
+                <span>⭐ Rating: 5.0</span>
+            </div>
+
+            <h3>$6.99</h3>
+
+                    <a href="order.html?coffee=cappuccino" class="buy-btn">
+                            Buy Now
+                    </a>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Latte Card -->
+    <div class="coffee-card-box">
+
+        <img src="images/Virtuoso Latte.jpg" class="coffee-img" alt="Latte">
+
+        <div class="card-overlay"></div>
+
+        <div class="card-content">
+
+            <h2>Latte</h2>
+
+            <p class="coffee-detail">
+                Smooth creamy milk coffee with
+                relaxing and soft taste.
+            </p>
+
+            <div class="coffee-info">
+                <span>☕ Size: Large</span>
+                <span>🔥 Roast: Light</span>
+                <span>⭐ Rating: 4.7</span>
+            </div>
+
+            <h3>$5.49</h3>
+
+            <a href="order.html?coffee=latte" class="buy-btn">
+                    Buy Now
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Mocha Card -->
+    <div class="coffee-card-box">
+
+        <img src="images/machaaa.jpg" class="coffee-img" alt="Mocha">
+
+        <div class="card-overlay"></div>
+
+        <div class="card-content">
+
+            <h2>Mocha</h2>
+
+            <p class="coffee-detail">
+                Perfect combination of chocolate
+                and premium coffee flavour.
+            </p>
+
+            <div class="coffee-info">
+                <span>☕ Size: Medium</span>
+                <span>🔥 Roast: Dark</span>
+                <span>⭐ Rating: 4.9</span>
+            </div>
+
+            <h3>$7.49</h3>
+                <a href="order.html?coffee=mocha" class="buy-btn">
+                    Buy Now
+                </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Cold Coffee Card -->
+    <div class="coffee-card-box">
+
+        <img src="images/cold-coffie.jpg" class="coffee-img" alt="Cold Coffee">
+
+        <div class="card-overlay"></div>
+
+        <div class="card-content">
+
+            <h2>Cold Coffee</h2>
+
+            <p class="coffee-detail">
+                Refreshing chilled coffee with
+                creamy texture and sweet flavour.
+            </p>
+
+            <div class="coffee-info">
+                <span>☕ Size: Large</span>
+                <span>❄️ Type: Cold</span>
+                <span>⭐ Rating: 4.6</span>
+            </div>
+
+            <h3>$4.99</h3>
+                <a href="order.html?coffee=coldcoffee" class="buy-btn">
+                    Buy Now
+                </a>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+    </div>
+
+
+</section>
+
+<script>
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
+
+navToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+    navToggle.classList.toggle("open");
+});
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        navToggle.classList.remove("open");
+    });
+});
+
+document.addEventListener("click", function (e) {
+    const isClickInsideNav = e.target.closest(".site-nav");
+    if (!isClickInsideNav && navLinks.classList.contains("active")) {
+        navLinks.classList.remove("active");
+        navToggle.classList.remove("open");
+    }
+});
+
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+    if (link.dataset.page === currentPage) {
+        link.classList.add("active");
+    }
+});
+</script>
+</script>
+</body>
+</html>

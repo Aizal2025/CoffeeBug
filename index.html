@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+	<title>CoffeeBug</title>
+</head>
+<body>
+ 
+ <header class="site-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">☕ CoffeeBug</a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html" data-page="index.html">Home</a>
+            <a href="menu.html" data-page="menu.html">Menu</a>
+            <a href="order.html" data-page="order.html">Order</a>
+            <a href="payment.html" data-page="payment.html">Payment</a>
+        </nav>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    </div>
+</header>   
+
+<section class="hero-section">
+        <div class="bg-image"></div>
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="reveal">
+                <h2 class="title">
+                    <b>Welcome to CoffeeBug</b>
+                </h2>
+            </div>
+
+            <div class="reveal">
+                <h2 class="title">
+                    Where Every Sip Inspires.
+                </h2>
+            </div>
+
+            <div class="reveal">
+                <p class="subtitle">
+                    From rich espresso to creamy lattes,
+                    experience café-quality coffee made with passion
+                    and served with care.
+                </p>
+            </div>
+
+            <a href="menu.html">
+        <button class="coffee-btn">
+    		Explore Menu ☕
+		</button>
+    </a>
+</div>
+   </div>
+</section>
+
+	
+<script>
+    /* ==========================================
+        CoffeeBug Unified Navbar
+========================================== */
+
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
+
+/* Hamburger toggle */
+navToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+    navToggle.classList.toggle("open");
+});
+
+/* Close menu when a link is clicked (mobile) */
+navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        navToggle.classList.remove("open");
+    });
+});
+
+/* Close menu when clicking outside navbar */
+document.addEventListener("click", function (e) {
+    const isClickInsideNav = e.target.closest(".site-nav");
+    if (!isClickInsideNav && navLinks.classList.contains("active")) {
+        navLinks.classList.remove("active");
+        navToggle.classList.remove("open");
+    }
+});
+
+/* Highlight current page in nav */
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+    if (link.dataset.page === currentPage) {
+        link.classList.add("active");
+    }
+});
+   
+    /* ==========================================
+        CoffeeBug Navbar Date & Time
+========================================== */
+
+function updateNavDateTime() {
+
+    const el = document.getElementById("navDateTime");
+    if (!el) return;
+
+    const now = new Date();
+
+    const dateOptions = { day: "2-digit", month: "short", year: "numeric" };
+    const timeOptions = { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true };
+
+    const dateStr = now.toLocaleDateString("en-IN", dateOptions);
+    const timeStr = now.toLocaleTimeString("en-IN", timeOptions);
+
+    el.textContent = `${dateStr} | ${timeStr}`;
+}
+
+updateNavDateTime();
+setInterval(updateNavDateTime, 1000);
+
+gsap.timeline()
+
+// Background zoom
+
+.to(".hero-section",{
+
+    backgroundSize:"110%",
+
+    duration:2,
+
+    ease:"power2.out"
+
+})
+
+// Text reveal
+// (the coloured swipe box itself is handled purely in CSS via
+// the revealSwipe keyframes, since GSAP cannot animate ::before
+// pseudo-elements directly)
+
+.to(".reveal h2, .reveal p",{
+
+    y:0,
+
+    duration:.8,
+
+    stagger:.2,
+
+    ease:"power3.out"
+
+},"-=0.6");
+
+
+</script>
+</body>
+</html>

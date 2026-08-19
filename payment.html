@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CoffeeBug | Checkout</title>
+
+    <link rel="stylesheet" href="payment.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+<header class="site-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">☕ CoffeeBug</a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html" data-page="index.html">Home</a>
+            <a href="menu.html" data-page="menu.html">Menu</a>
+            <a href="order.html" data-page="order.html">Order</a>
+            <a href="payment.html" data-page="payment.html">Payment</a>
+        </nav>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    </div>
+</header>
+
+<section class="payment-page">
+
+
+    <!-- Background Glow -->
+
+    <div class="glow glow-left"></div>
+
+    <div class="glow glow-right"></div>
+
+
+
+    <!-- Main Card -->
+
+    <div class="payment-card">
+
+
+
+        <!-- ==========================
+                LEFT SIDE
+        ========================== -->
+
+        <div class="product-side">
+
+
+            <div class="brand">
+
+                <h1><a href="index.html" style="color:inherit;text-decoration:none;">CoffeeBug</a></h1>
+
+                <span>Every Sip Inspires.</span>
+
+            </div>
+
+
+
+            <!-- Coffee Image -->
+
+            <div class="coffee-image">
+
+                <img
+                    id="paymentCoffeeImage"
+                    src="images/expresso.jpg"
+                    alt="Coffee">
+
+            </div>
+
+
+
+            <h2 id="paymentCoffeeName">
+                Espresso
+            </h2>
+
+
+
+            <div class="customer-box">
+
+                <span>ORDER FOR</span>
+
+                <h3 id="paymentCustomerName">
+                    Customer
+                </h3>
+
+            </div>
+
+
+
+            <!-- Order Information -->
+
+            <div class="order-info">
+
+
+                <div>
+
+                    <small>Quantity</small>
+
+                    <strong id="paymentQuantity">
+                        1
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <small>Total</small>
+
+                    <strong>
+                        ₹<span id="paymentTotal">299</span>
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <!-- ==========================
+                RIGHT SIDE
+        ========================== -->
+
+        <div class="payment-side">
+
+
+            <div class="payment-heading">
+
+                <span>CHECKOUT</span>
+
+                <h2>Choose Payment</h2>
+
+                <p>
+                    Complete your CoffeeBug order.
+                </p>
+
+            </div>
+
+
+
+            <!-- Demo Notice -->
+
+            <div class="demo-notice">
+
+                <div class="notice-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <strong>
+                        Demo Payment Only
+                    </strong>
+
+                    <p>
+                        This is a demo payment system.
+                        No real money will be charged.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Payment Buttons -->
+
+            <div class="payment-buttons">
+
+
+                <button
+                    class="payment-method active"
+                    data-method="upi">
+
+                    <span class="method-icon">
+                        ◉
+                    </span>
+
+                    <span class="method-text">
+
+                        <strong>Demo UPI</strong>
+
+                        <small>
+                            Scan QR & Pay
+                        </small>
+
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="payment-method"
+                    data-method="card">
+
+                    <span class="method-icon">
+                        ▣
+                    </span>
+
+                    <span class="method-text">
+
+                        <strong>Demo Card</strong>
+
+                        <small>
+                            Card Payment
+                        </small>
+
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="payment-method"
+                    data-method="cod">
+
+                    <span class="method-icon">
+                        □
+                    </span>
+
+                    <span class="method-text">
+
+                        <strong>Cash on Delivery</strong>
+
+                        <small>
+                            Pay at doorstep
+                        </small>
+
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- ==========================
+                    UPI
+            ========================== -->
+
+            <div
+                id="upiSection"
+                class="payment-option">
+
+
+                <div class="option-heading">
+
+                    <h3>
+                        Scan & Pay
+                    </h3>
+
+                    <p>
+                        Scan the demo QR code to
+                        simulate payment.
+                    </p>
+
+                </div>
+
+
+
+                <!-- BIG QR -->
+
+                <div class="qr-box">
+
+                    <div class="fake-qr">
+
+                        <div class="qr-inner">
+
+                            <span>▦</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="qr-label">
+
+                    <strong>
+                        Demo QR Scanner
+                    </strong>
+
+                    <span>
+                        No real payment will be processed.
+                    </span>
+
+                </div>
+
+
+
+                <button
+                    id="scanPayBtn"
+                    class="main-pay-btn">
+
+                    <span>
+                        Scan & Pay
+                    </span>
+
+                    <strong>
+                        ₹<span id="upiAmount">299</span>
+                    </strong>
+
+                </button>
+
+
+            </div>
+
+
+
+
+            <!-- ==========================
+                    CARD
+            ========================== -->
+
+            <div
+                id="cardSection"
+                class="payment-option hidden">
+
+
+                <div class="option-heading">
+
+                    <h3>
+                        Demo Card Payment
+                    </h3>
+
+                    <p>
+                        Enter any demo card number.
+                    </p>
+
+                </div>
+
+
+                <input
+                    id="cardNumber"
+                    class="payment-input"
+                    type="text"
+                    placeholder="Card Number">
+
+
+                <div class="card-inputs">
+
+                    <input
+                        class="payment-input"
+                        type="text"
+                        placeholder="MM / YY">
+
+
+                    <input
+                        class="payment-input"
+                        type="text"
+                        placeholder="CVV">
+
+                </div>
+
+
+                <button
+                    id="cardPayBtn"
+                    class="main-pay-btn">
+
+                    <span>
+                        Pay Now
+                    </span>
+
+                    <strong>
+                        ₹<span id="cardAmount">299</span>
+                    </strong>
+
+                </button>
+
+
+            </div>
+
+
+
+
+            <!-- ==========================
+                    COD
+            ========================== -->
+
+            <div
+                id="codSection"
+                class="payment-option hidden">
+
+
+                <div class="option-heading">
+
+                    <h3>
+                        Cash on Delivery
+                    </h3>
+
+                    <p>
+                        Pay when your CoffeeBug
+                        order arrives.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="codBtn"
+                    class="main-pay-btn">
+
+                    <span>
+                        Confirm Order
+                    </span>
+
+                    <strong>
+                        ₹<span id="codAmount">299</span>
+                    </strong>
+
+                </button>
+
+
+            </div>
+
+
+
+
+            <!-- ==========================
+                    PROCESSING
+            ========================== -->
+
+            <div
+                id="paymentProcessing"
+                class="processing hidden">
+
+
+                <div class="loader"></div>
+
+                <h3>
+                    Processing...
+                </h3>
+
+                <p>
+                    Please wait a moment.
+                </p>
+
+
+            </div>
+
+
+
+
+            <!-- ==========================
+                    SUCCESS
+            ========================== -->
+
+            <div
+                id="paymentSuccess"
+                class="success hidden">
+
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+
+                <h2>
+                    Order Confirmed!
+                </h2>
+
+
+                <p>
+                    Your CoffeeBug demo order
+                    has been confirmed.
+                </p>
+
+
+                <small>
+                    Demo payment only —
+                    no real transaction was made.
+                </small>
+
+
+                <button
+                    id="continueBtn"
+                    class="success-btn">
+
+                    Continue
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Confirmation Popup -->
+
+    <div
+        id="confirmPopup"
+        class="popup-overlay hidden">
+
+
+        <div class="confirm-popup">
+
+
+            <div class="popup-icon">
+                ☕
+            </div>
+
+
+            <h2>
+                Confirm Your Order?
+            </h2>
+
+
+            <p>
+                Please confirm that you want
+                to place this CoffeeBug order.
+            </p>
+
+
+            <div class="popup-total">
+
+                Total:
+
+                <strong>
+                    ₹<span id="popupTotal">
+                        299
+                    </span>
+                </strong>
+
+            </div>
+
+
+            <div class="popup-buttons">
+
+
+                <button
+                    id="cancelOrder"
+                    class="cancel-btn">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    id="confirmOrder"
+                    class="confirm-btn">
+
+                    Confirm Order
+
+                </button>
+
+
+            </div>
+
+
+            <small>
+                Demo checkout — no real payment.
+            </small>
+
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<script>
+    /* ==========================================
+        CoffeeBug Unified Navbar
+========================================== */
+
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
+
+/* Hamburger toggle */
+navToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+    navToggle.classList.toggle("open");
+});
+
+/* Close menu when a link is clicked (mobile) */
+navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        navToggle.classList.remove("open");
+    });
+});
+
+/* Close menu when clicking outside navbar */
+document.addEventListener("click", function (e) {
+    const isClickInsideNav = e.target.closest(".site-nav");
+    if (!isClickInsideNav && navLinks.classList.contains("active")) {
+        navLinks.classList.remove("active");
+        navToggle.classList.remove("open");
+    }
+});
+
+/* Highlight current page in nav */
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+    if (link.dataset.page === currentPage) {
+        link.classList.add("active");
+    }
+});
+    /* ==========================================
+        CoffeeBug Payment Page
+========================================== */
+
+/* ---------- Load Order Data ---------- */
+
+function loadOrder() {
+    const data = localStorage.getItem("coffeebugOrder");
+    return data ? JSON.parse(data) : null;
+}
+
+const orderData = loadOrder();
+
+/* Normalize: support both old single-item format and new multi-item format */
+function getOrderItems(order) {
+    if (!order) return [];
+    if (Array.isArray(order.items)) return order.items;
+
+    /* fallback for old single-item order shape */
+    return [{
+        name: order.coffee || "Coffee",
+        image: order.image || "images/espresso.jpg",
+        price: order.price || 0,
+        qty: order.quantity || 1
+    }];
+}
+
+const items = getOrderItems(orderData);
+const grandTotal = orderData ? orderData.total : 0;
+
+/* ---------- Elements ---------- */
+
+const paymentItemsListEl = document.getElementById("paymentItemsList");
+const paymentItemCountEl = document.getElementById("paymentQuantity");
+const paymentTotalEl = document.getElementById("paymentTotal");
+const paymentCustomerNameEl = document.getElementById("paymentCustomerName");
+
+const upiAmountEl = document.getElementById("upiAmount");
+const cardAmountEl = document.getElementById("cardAmount");
+const codAmountEl = document.getElementById("codAmount");
+const popupTotalEl = document.getElementById("popupTotal");
+
+/* ---------- Render Order Summary ---------- */
+
+function renderPaymentItems() {
+
+    if (!paymentItemsListEl) return;
+
+    if (items.length === 0) {
+        paymentItemsListEl.innerHTML = `<p style="color:#c9a989;font-size:13px;">No items found.</p>`;
+    } else {
+        paymentItemsListEl.innerHTML = items.map(item => {
+            const subtotal = item.price * item.qty;
+            return `
+                <div class="payment-item">
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="payment-item-info">
+                        <h4>${item.name}</h4>
+                        <span>Qty: ${item.qty} × ₹${item.price}</span>
+                    </div>
+                    <div class="payment-item-subtotal">₹${subtotal}</div>
+                </div>
+            `;
+        }).join("");
+    }
+
+    const totalQty = items.reduce((sum, item) => sum + item.qty, 0);
+
+    if (paymentItemCountEl) paymentItemCountEl.textContent = totalQty;
+    if (paymentTotalEl) paymentTotalEl.textContent = grandTotal;
+    if (upiAmountEl) upiAmountEl.textContent = grandTotal;
+    if (cardAmountEl) cardAmountEl.textContent = grandTotal;
+    if (codAmountEl) codAmountEl.textContent = grandTotal;
+    if (popupTotalEl) popupTotalEl.textContent = grandTotal;
+
+    if (paymentCustomerNameEl && orderData && orderData.customerName) {
+        paymentCustomerNameEl.textContent = orderData.customerName;
+    }
+}
+
+renderPaymentItems();
+
+/* ---------- Payment Method Tabs ---------- */
+
+const methodButtons = document.querySelectorAll(".payment-method");
+const upiSection = document.getElementById("upiSection");
+const cardSection = document.getElementById("cardSection");
+const codSection = document.getElementById("codSection");
+
+function showSection(method) {
+
+    [upiSection, cardSection, codSection].forEach(sec => {
+        if (sec) sec.classList.add("hidden");
+    });
+
+    if (method === "upi" && upiSection) upiSection.classList.remove("hidden");
+    if (method === "card" && cardSection) cardSection.classList.remove("hidden");
+    if (method === "cod" && codSection) codSection.classList.remove("hidden");
+}
+
+methodButtons.forEach(btn => {
+    btn.addEventListener("click", function () {
+        methodButtons.forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+        showSection(this.dataset.method);
+    });
+});
+
+/* ---------- Confirmation Popup ---------- */
+
+const confirmPopup = document.getElementById("confirmPopup");
+const cancelOrderBtn = document.getElementById("cancelOrder");
+const confirmOrderBtn = document.getElementById("confirmOrder");
+
+const paymentProcessing = document.getElementById("paymentProcessing");
+const paymentSuccess = document.getElementById("paymentSuccess");
+const continueBtn = document.getElementById("continueBtn");
+
+let pendingMethod = null;
+
+function openConfirmPopup(method) {
+    pendingMethod = method;
+    if (confirmPopup) confirmPopup.classList.remove("hidden");
+}
+
+function closeConfirmPopup() {
+    if (confirmPopup) confirmPopup.classList.add("hidden");
+}
+
+if (cancelOrderBtn) {
+    cancelOrderBtn.addEventListener("click", closeConfirmPopup);
+}
+
+if (confirmOrderBtn) {
+    confirmOrderBtn.addEventListener("click", function () {
+        closeConfirmPopup();
+        processPayment();
+    });
+}
+
+/* ---------- Trigger Buttons ---------- */
+
+const scanPayBtn = document.getElementById("scanPayBtn");
+const cardPayBtn = document.getElementById("cardPayBtn");
+const codBtn = document.getElementById("codBtn");
+
+if (scanPayBtn) scanPayBtn.addEventListener("click", () => openConfirmPopup("upi"));
+if (cardPayBtn) cardPayBtn.addEventListener("click", () => openConfirmPopup("card"));
+if (codBtn) codBtn.addEventListener("click", () => openConfirmPopup("cod"));
+
+/* ---------- Fake Processing + Success ---------- */
+
+function processPayment() {
+
+    if (paymentProcessing) paymentProcessing.classList.remove("hidden");
+
+    setTimeout(function () {
+        if (paymentProcessing) paymentProcessing.classList.add("hidden");
+        if (paymentSuccess) paymentSuccess.classList.remove("hidden");
+    }, 1800);
+}
+
+if (continueBtn) {
+    continueBtn.addEventListener("click", function () {
+        localStorage.removeItem("coffeebugOrder");
+        localStorage.removeItem("coffeebugCart");
+        window.location.href = "index.html";
+    });
+}
+</script>
+
+</body>
+
+</html>

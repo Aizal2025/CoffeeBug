@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CoffeeBug | Checkout</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+<header class="site-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">☕ CoffeeBug</a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html" data-page="index.html">Home</a>
+            <a href="menu.html" data-page="menu.html">Menu</a>
+            <a href="order.html" data-page="order.html">Order</a>
+            <a href="payment.html" data-page="payment.html">Payment</a>
+        </nav>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    </div>
+</header>
+<!-- ===========================
+        ORDER PAGE
+=========================== -->
+
+<section class="order-page">
+
+
+    <!-- Background Decoration -->
+
+    <div class="bg-circle bg1"></div>
+
+    <div class="bg-circle bg2"></div>
+
+
+    <!-- Main Card -->
+
+    <div class="order-card">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="product-section">
+
+            <h1 class="heading">
+
+                CoffeeBug
+
+            </h1>
+
+            <p class="tagline">
+
+                Premium Coffee Experience
+
+            </p>
+
+
+            <!-- Product Image -->
+
+            <div class="product-image">
+
+                <img id="coffeeImage"
+                     src="images/espresso.jpg"
+                     alt="Coffee">
+
+            </div>
+
+
+            <!-- Product Name -->
+
+            <h2 id="coffeeName">
+
+                Espresso
+
+            </h2>
+
+
+            <!-- Description -->
+
+            <p id="coffeeDescription">
+
+                Strong espresso with rich aroma and
+                premium roasted coffee beans.
+
+            </p>
+
+
+            <!-- Information -->
+
+            <div class="product-info">
+
+                <div>
+
+                    <span>Roast</span>
+
+                    <h4 id="coffeeRoast">
+
+                        Dark Roast
+
+                    </h4>
+
+                </div>
+
+
+                <div>
+
+                    <span>Size</span>
+
+                    <h4 id="coffeeSize">
+
+                        Regular
+
+                    </h4>
+
+                </div>
+
+
+                <div>
+
+                    <span>Rating</span>
+
+                    <h4 id="coffeeRating">
+
+                        ⭐ 4.8
+
+                    </h4>
+
+                </div>
+
+            </div>
+
+
+            <!-- Price -->
+
+            <div class="price-box">
+
+                ₹
+
+                <span id="coffeePrice">
+
+                    299
+
+                </span>
+
+            </div>
+
+
+            <!-- Quantity -->
+            <div class="quantity-box">
+                 <button type="button" id="minusBtn">−</button>
+
+                    <span id="quantity">1</span>
+
+                <button type="button" id="plusBtn">+</button>
+            </div>
+
+            <!-- Total -->
+
+            <div class="total-price">
+
+                Total :
+
+                ₹
+
+                <span id="totalPrice">
+
+                    299
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="customer-section">
+
+            <h2>
+
+                Customer Details
+
+            </h2>
+
+            <p>
+
+                Fill your information to complete
+                your CoffeeBug order.
+            </p>
+
+                        <!-- ==========================
+                    Customer Form
+            ========================== -->
+
+            <form id="orderForm">
+
+                <div class="input-box">
+
+                    <label>Full Name</label>
+
+                    <input type="text"
+                           id="customerName"
+                           placeholder="Enter your full name"
+                           required>
+
+                </div>
+
+
+
+                <div class="input-box">
+
+                    <label>Phone Number</label>
+
+                    <input type="tel"
+                           id="customerPhone"
+                           placeholder="Enter your phone number"
+                           required>
+
+                </div>
+
+
+
+                <div class="input-box">
+
+                    <label>Email Address</label>
+
+                    <input type="email"
+                           id="customerEmail"
+                           placeholder="Enter your email">
+
+                </div>
+
+
+
+                <div class="input-box">
+
+                    <label>Delivery Address</label>
+
+                    <textarea id="customerAddress"
+                              rows="4"
+                              placeholder="House No, Street, Area..."
+                              required></textarea>
+
+                </div>
+
+
+
+                <div class="double-input">
+
+                    <div class="input-box">
+
+                        <label>City</label>
+
+                        <input type="text"
+                               id="customerCity"
+                               placeholder="City">
+
+                    </div>
+
+
+                    <div class="input-box">
+
+                        <label>Pincode</label>
+
+                        <input type="text"
+                               id="customerPincode"
+                               placeholder="Pincode">
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="input-box">
+
+                    <label>Special Instructions</label>
+
+                    <textarea id="customerNote"
+                              rows="3"
+                              placeholder="Extra sugar, less ice, etc."></textarea>
+
+                </div>
+
+
+
+                <!-- Order Summary -->
+
+                <div class="order-summary">
+
+                    <h3>Order Summary</h3>
+
+                    <div class="summary-row">
+
+                        <span>Coffee</span>
+
+                        <span id="summaryCoffee">
+                            Espresso
+                        </span>
+
+                    </div>
+
+                    <div class="summary-row">
+
+                        <span>Quantity</span>
+
+                        <span id="summaryQuantity">
+                            1
+                        </span>
+
+                    </div>
+
+                    <div class="summary-row">
+
+                        <span>Total</span>
+
+                        <span>
+
+                            ₹
+
+                            <span id="summaryTotal">
+                                299
+                            </span>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Place Order -->
+                <button type="submit" class="place-order-btn">Place Order</button>
+
+
+
+                <!-- Secure Payment -->
+
+                <div class="payment-note">
+
+                    🔒 Secure Checkout
+
+                    <br>
+
+                    Your order details are protected.
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+    /* ==========================================
+        CoffeeBug Unified Navbar
+========================================== */
+
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
+
+/* Hamburger toggle */
+navToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+    navToggle.classList.toggle("open");
+});
+
+/* Close menu when a link is clicked (mobile) */
+navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        navToggle.classList.remove("open");
+    });
+});
+
+/* Close menu when clicking outside navbar */
+document.addEventListener("click", function (e) {
+    const isClickInsideNav = e.target.closest(".site-nav");
+    if (!isClickInsideNav && navLinks.classList.contains("active")) {
+        navLinks.classList.remove("active");
+        navToggle.classList.remove("open");
+    }
+});
+
+/* Highlight current page in nav */
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+    if (link.dataset.page === currentPage) {
+        link.classList.add("active");
+    }
+});
+</script>
+<script>
+/* ==========================================
+        CoffeeBug Order Page
+========================================== */
+
+/* ---------- Product Database ---------- */
+
+const coffeeProducts = {
+
+    espresso: {
+        name: "espresso",
+        image: "images/expresso.jpg",
+        description: "Strong espresso made from premium roasted coffee beans with a rich aroma.",
+        roast: "Dark Roast",
+        size: "Regular",
+        rating: "⭐ 4.8",
+        price: 299
+    },
+
+    cappuccino: {
+        name: "Cappuccino",
+        image: "images/chapattachno.jpg",
+        description: "Smooth cappuccino topped with creamy milk foam and chocolate dust.",
+        roast: "Medium Roast",
+        size: "Large",
+        rating: "⭐ 5.0",
+        price: 349
+    },
+
+    latte: {
+        name: "Latte",
+        image: "images/Virtuoso Latte.jpg",
+        description: "Silky steamed milk blended with rich espresso for a smooth taste.",
+        roast: "Light Roast",
+        size: "Large",
+        rating: "⭐ 4.7",
+        price: 329
+    },
+
+    mocha: {
+        name: "Mocha",
+        image: "images/machaaa.jpg",
+        description: "Chocolate mixed with espresso and steamed milk for a premium flavour.",
+        roast: "Dark Roast",
+        size: "Medium",
+        rating: "⭐ 4.9",
+        price: 379
+    },
+
+    coldcoffee: {
+        name: "Cold Coffee",
+        image: "images/cold-coffie.jpg",
+        description: "Refreshing chilled coffee served with creamy texture and ice.",
+        roast: "Medium Roast",
+        size: "Large",
+        rating: "⭐ 4.6",
+        price: 279
+    }
+
+};
+
+/* ---------- Read Coffee Name From URL ---------- */
+
+const params = new URLSearchParams(window.location.search);
+const coffeeKey = params.get("coffee") || "espresso";
+
+/* ---------- Selected Product (falls back to espresso if the key is unknown) ---------- */
+
+const product = coffeeProducts[coffeeKey] || coffeeProducts.espresso;
+const basePrice = product.price;
+
+/* ---------- Product Elements ---------- */
+
+const coffeeImageEl = document.getElementById("coffeeImage");
+const coffeeNameEl = document.getElementById("coffeeName");
+const coffeeDescriptionEl = document.getElementById("coffeeDescription");
+const coffeeRoastEl = document.getElementById("coffeeRoast");
+const coffeeSizeEl = document.getElementById("coffeeSize");
+const coffeeRatingEl = document.getElementById("coffeeRating");
+const coffeePriceEl = document.getElementById("coffeePrice");
+
+const summaryCoffee = document.getElementById("summaryCoffee");
+const summaryQuantity = document.getElementById("summaryQuantity");
+const summaryTotal = document.getElementById("summaryTotal");
+
+/* ---------- Auto Fill Coffee Details ---------- */
+
+coffeeImageEl.src = product.image;
+coffeeNameEl.textContent = product.name;
+coffeeDescriptionEl.textContent = product.description;
+coffeeRoastEl.textContent = product.roast;
+coffeeSizeEl.textContent = product.size;
+coffeeRatingEl.textContent = product.rating;
+coffeePriceEl.textContent = product.price;
+summaryCoffee.textContent = product.name;
+
+/* ==========================================
+   QUANTITY + TOTAL SYSTEM
+========================================== */
+
+let quantity = 1;
+
+const minusBtn = document.getElementById("minusBtn");
+const plusBtn = document.getElementById("plusBtn");
+const quantityDisplay = document.getElementById("quantity");
+const totalPriceEl = document.getElementById("totalPrice");
+
+function updateQuantity() {
+
+    quantityDisplay.textContent = quantity;
+
+    const total = basePrice * quantity;
+
+    totalPriceEl.textContent = total;
+    summaryQuantity.textContent = quantity;
+    summaryTotal.textContent = total;
+
+}
+
+plusBtn.addEventListener("click", function () {
+    quantity = quantity + 1;
+    updateQuantity();
+});
+
+minusBtn.addEventListener("click", function () {
+    if (quantity > 1) {
+        quantity = quantity - 1;
+        updateQuantity();
+    }
+});
+
+/* First load */
+updateQuantity();
+
+/* ---------- Customer Form ---------- */
+
+const orderForm = document.getElementById("orderForm");
+
+orderForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const total = basePrice * quantity;
+
+    const orderData = {
+
+        coffee: product.name,
+        image: product.image,
+        price: basePrice,
+        quantity: quantity,
+        total: total,
+
+        customerName: document.getElementById("customerName").value,
+        customerPhone: document.getElementById("customerPhone").value,
+        customerEmail: document.getElementById("customerEmail").value,
+        customerAddress: document.getElementById("customerAddress").value,
+        customerCity: document.getElementById("customerCity").value,
+        customerPincode: document.getElementById("customerPincode").value,
+        customerNote: document.getElementById("customerNote").value
+
+    };
+
+    /* Save order for the payment page to read */
+
+    localStorage.setItem("coffeebugOrder", JSON.stringify(orderData));
+
+    /* Redirect to payment */
+
+    window.location.href = "payment.html";
+
+});
+</script>
+
+</body>
+
+</html>

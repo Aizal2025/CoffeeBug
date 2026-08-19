@@ -1,0 +1,3085 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ==========================================
+        PROFESSIONAL NAVBAR
+========================================== */
+
+.site-nav{
+
+    position:sticky;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    background:rgba(20,10,5,.55);
+
+    backdrop-filter:blur(16px);
+
+    -webkit-backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 8px 30px rgba(0,0,0,.25);
+
+}
+
+.nav-inner{
+
+    max-width:1300px;
+
+    margin:0 auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:16px 5%;
+
+}
+
+
+/* ---------- Date/Time ---------- */
+
+.nav-datetime{
+
+    color:#c9a989;
+
+    font-size:12.5px;
+
+    font-weight:500;
+
+    letter-spacing:.4px;
+
+    white-space:nowrap;
+
+    padding:6px 14px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.04);
+
+}
+
+
+/* ---------- Logo ---------- */
+
+.nav-logo{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    letter-spacing:.5px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    transition:.3s;
+
+}
+
+.nav-logo:hover{
+
+    color:#ffcb87;
+
+    transform:scale(1.03);
+
+}
+
+
+/* ---------- Nav Links ---------- */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:38px;
+
+}
+
+.nav-links a{
+
+    position:relative;
+
+    color:#f1e8df;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    letter-spacing:.3px;
+
+    padding:6px 2px;
+
+    transition:.3s;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:0%;
+
+    height:2px;
+
+    background:linear-gradient(90deg,#c49a6c,#ffcb87);
+
+    transition:.35s ease;
+
+    border-radius:5px;
+
+}
+
+.nav-links a:hover{
+
+    color:#ffcb87;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+
+/* ---------- Mobile Toggle ---------- */
+
+.nav-toggle{
+
+    display:none;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    color:#fff;
+
+    font-size:20px;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.nav-toggle:hover{
+
+    background:#c49a6c;
+
+    color:#2d1b13;
+
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:768px){
+
+    .nav-datetime{
+
+        display:none;
+
+    }
+
+    .nav-toggle{
+
+        display:block;
+
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:100%;
+
+        left:0;
+
+        width:100%;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:0;
+
+        background:rgba(20,10,5,.96);
+
+        backdrop-filter:blur(16px);
+
+        max-height:0;
+
+        overflow:hidden;
+
+        transition:.4s ease;
+
+        border-bottom:1px solid rgba(255,255,255,.08);
+
+    }
+
+    .nav-links.active{
+
+        max-height:300px;
+
+    }
+
+    .nav-links a{
+
+        width:100%;
+
+        padding:16px 5%;
+
+        border-bottom:1px solid rgba(255,255,255,.06);
+
+    }
+
+    .nav-links a::after{
+
+        display:none;
+
+    }
+}
+
+@media(max-width:480px){
+
+    .nav-logo{
+
+        font-size:19px;
+
+    }
+
+    .nav-inner{
+
+        padding:14px 4%;
+
+    }
+}
+/* ==========================
+        Hero Section
+========================== */
+
+.hero-section{
+
+    min-height:100vh;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:0 6%;
+
+    overflow:hidden;
+
+    text-align:center;
+
+}
+
+
+/* Background Image */
+
+.hero-section .bg-image{
+
+    position:absolute;
+
+    inset:0;
+
+    background:url("images/img1.jpg") center/cover no-repeat;
+
+    background-attachment:fixed;
+
+    z-index:0;
+
+}
+
+
+/* Dark Overlay */
+
+.hero-section .bg-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,0.35);
+
+}
+
+
+
+/* Text Content */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    max-width:600px;
+
+    width:100%;
+
+    margin:0 auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+/* Text Reveal Box */
+
+.reveal{
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:table;
+
+    margin:0 auto 12px auto;
+
+}
+
+
+.reveal h2,
+.reveal p{
+
+    margin-top:10%;
+
+    color:white;
+
+    transform:translateY(100%);
+
+}
+
+
+/* Heading */
+
+.title{
+
+    font-size:clamp(18px, 3.2vw, 34px);
+
+    line-height:1.3;
+
+    word-wrap:break-word;
+
+    font-weight:600;
+
+}
+
+
+/* Paragraph */
+
+.subtitle{
+
+    font-size:clamp(12px, 1.6vw, 15px);
+
+    line-height:1.6;
+
+    color:#f1e8df;
+
+}
+
+
+
+/* Brown Reveal Box */
+
+.reveal::before{
+
+    content:"";
+
+    position:absolute;
+
+    background:#4b2e1f;
+
+    width:100%;
+
+    height:100%;
+
+    left:-100%;
+
+    top:0;
+
+    z-index:2;
+
+}
+
+
+
+/* ==========================
+Animated Transparent Columns
+========================== */
+
+
+.hero-section::before,
+.hero-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    width:50%;
+
+    height:100%;
+
+    background:rgba(75,46,31,0.35);
+
+    backdrop-filter:blur(2px);
+
+    z-index:2;
+
+    opacity:0;
+
+}
+
+
+
+/* Left Column */
+
+.hero-section::before{
+
+    left:0;
+
+    transform-origin:left;
+
+    transform:rotateY(90deg);
+
+    animation:leftColumn 1.2s ease forwards;
+
+    animation-delay:1s;
+
+}
+
+
+
+/* Right Column */
+
+.hero-section::after{
+
+    right:0;
+
+    transform-origin:right;
+
+    transform:rotateY(-90deg);
+
+    animation:rightColumn 1.2s ease forwards;
+
+    animation-delay:1s;
+
+}
+
+
+
+@keyframes leftColumn{
+
+    0%{
+
+        opacity:0;
+
+        transform:rotateY(90deg);
+
+    }
+
+
+    100%{
+
+        opacity:1;
+
+        transform:rotateY(0deg);
+
+    }
+
+}
+
+
+
+@keyframes rightColumn{
+
+    0%{
+
+        opacity:0;
+
+        transform:rotateY(-90deg);
+
+    }
+
+
+    100%{
+
+        opacity:1;
+
+        transform:rotateY(0deg);
+
+    }
+
+}
+
+
+/* ==========================
+   Animated Button — always bottom center
+========================== */
+
+/* ==========================
+   Animated Button — below text, normal flow
+========================== */
+
+
+.coffee-btn{
+
+    position:relative;
+
+    margin-top:25px;
+
+    padding:14px 34px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#6f4e37;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.4);
+
+    z-index:6;
+
+    opacity:0;
+
+    transform:translateY(40px) scale(.8);
+
+    animation:
+    buttonFlip 1s ease forwards;
+
+    animation-delay:1.5s;
+
+}
+
+
+
+/* Hover Effect */
+
+.coffee-btn:hover{
+
+    transform:scale(1.05);
+
+    background:#c49a6c;
+
+}
+
+
+
+/* Rise Animation */
+
+
+@keyframes buttonFlip{
+
+
+    0%{
+
+        opacity:0;
+
+        transform:translateY(40px) scale(.8);
+
+    }
+
+
+    100%{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+/* ==========================================
+        HERO SECTION RESPONSIVE
+========================================== */
+
+@media(max-width:900px){
+
+    .hero-section{
+
+        padding:0 5%;
+
+    }
+
+    .hero-content{
+
+        max-width:80%;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero-section{
+
+        padding:0 4%;
+
+    }
+
+    .title{
+
+        font-size:clamp(16px, 4.5vw, 24px);
+
+    }
+
+    .subtitle{
+
+        font-size:clamp(11px, 3vw, 13px);
+
+    }
+
+    .coffee-btn{
+
+        padding:12px 26px;
+
+        font-size:14px;
+
+        bottom:5%;
+
+    }
+
+}
+
+@media(max-width:380px){
+
+    .title{
+
+        font-size:15px;
+
+    }
+
+    .subtitle{
+
+        font-size:11px;
+
+    }
+
+    .coffee-btn{
+
+        padding:10px 22px;
+
+        font-size:13px;
+
+        bottom:4%;
+
+    }
+
+}
+
+
+/* =========================================
+        COFFEEBUG SECOND PAGE
+========================================= */
+
+.coffee-menu-page{
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top,
+    #8b5e3c 0%,
+    #5b351d 35%,
+    #2b170d 70%,
+    #120804 100%);
+
+    padding:80px 60px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+
+/* Decorative Background */
+
+.coffee-menu-page::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.03);
+
+    top:-250px;
+
+    right:-150px;
+
+    filter:blur(10px);
+
+}
+
+.coffee-menu-page::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:rgba(196,154,108,.08);
+
+    bottom:-180px;
+
+    left:-120px;
+
+    filter:blur(15px);
+
+}
+
+
+/* =========================================
+                LOGO
+========================================= */
+
+.coffee-logo{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+.coffee-logo h1{
+
+    color:#fff;
+
+    font-size:70px;
+
+    letter-spacing:4px;
+
+    font-weight:700;
+
+    text-shadow:
+    0 5px 20px rgba(0,0,0,.4);
+
+}
+
+
+.coffee-logo p{
+
+    color:#d9c2aa;
+
+    margin-top:10px;
+
+    font-size:20px;
+
+    letter-spacing:2px;
+
+}
+
+
+
+/* Rabbit Ears */
+
+.rabbit-ear{
+
+    position:absolute;
+
+    width:28px;
+
+    height:80px;
+
+    background:#000;
+
+    border-radius:50px;
+
+    top:-45px;
+
+}
+
+.left-ear{
+
+    left:47%;
+
+    transform:rotate(-18deg);
+
+}
+
+.right-ear{
+
+    right:47%;
+
+    transform:rotate(18deg);
+
+}
+
+
+
+/* =========================================
+             CARD SECTION
+========================================= */
+
+.coffee-slider{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:30px;
+
+}
+
+
+.coffee-cards{
+
+    display:flex;
+
+    gap:30px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+/* =========================================
+             SINGLE CARD
+========================================= */
+
+.coffee-card-box{
+
+    width:280px;
+
+    height:400px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:#2d1b13;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+    0 25px 45px rgba(0,0,0,.45);
+
+    transform:translateY(120px) scale(.8);
+
+    opacity:0;
+
+    animation:cardEntry 1s ease forwards;
+
+}
+
+
+/* Delay */
+
+.coffee-card-box:nth-child(1){
+
+    animation-delay:.2s;
+
+}
+
+.coffee-card-box:nth-child(2){
+
+    animation-delay:.4s;
+
+}
+
+.coffee-card-box:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+.coffee-card-box:nth-child(4){
+
+    animation-delay:.8s;
+
+}
+
+.coffee-card-box:nth-child(5){
+
+    animation-delay:1s;
+
+}
+
+
+
+/* =========================================
+             IMAGE
+========================================= */
+
+.coffee-img{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    transition:.7s;
+
+}
+
+
+
+/* Overlay */
+
+.card-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    rgba(0,0,0,.10),
+
+    rgba(0,0,0,.55),
+
+    rgba(0,0,0,.95)
+
+    );
+
+}
+
+
+
+/* =========================================
+             TEXT
+========================================= */
+
+.card-content{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    padding:20px;
+
+    z-index:5;
+
+    color:#fff;
+
+}
+
+.card-content h2{
+
+    font-size:30px;
+
+    margin-bottom:12px;
+
+}
+
+
+.coffee-detail{
+
+    font-size:14px;
+
+    line-height:1.5;
+
+    color:#f1e8df;
+
+    margin-bottom:12px;
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:2;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+}
+
+
+.coffee-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    font-size:14px;
+
+    color:#ffe7c8;
+
+}
+
+
+.coffee-card-box h3{
+
+    display:flex;
+
+    align-items:center;
+
+    margin:0 0 14px;
+
+    color:#ffd58f;
+
+    font-size:26px;
+
+}
+
+
+
+/* =========================================
+             HOVER EFFECT
+========================================= */
+
+.coffee-card-box:hover{
+
+    transform:
+
+    translateY(-12px)
+
+    scale(1.04);
+
+    transition:.45s;
+
+}
+
+
+.coffee-card-box:hover .coffee-img{
+
+    transform:
+
+    scale(1.15);
+
+}
+
+
+
+/* =========================================
+             CARD ANIMATION
+========================================= */
+
+@keyframes cardEntry{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+
+        translateY(120px)
+
+        scale(.75);
+
+    }
+
+    70%{
+
+        opacity:1;
+
+        transform:
+
+        translateY(-12px)
+
+        scale(1.03);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+
+        translateY(0)
+
+        scale(1);
+
+    }
+
+}/* =========================================
+        BUY BUTTON
+========================================= */
+
+.buy-btn{
+
+    display:block;
+
+    width:100%;
+
+    margin-top:12px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #c49a6c,
+        #8b5e3c
+    );
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.35);
+
+}
+
+.buy-btn:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.05);
+
+    background:linear-gradient(
+        135deg,
+        #ddb07d,
+        #b57644
+    );
+
+    box-shadow:
+    0 18px 35px rgba(0,0,0,.45);
+
+}
+
+.buy-btn:active{
+
+    transform:scale(.97);
+
+}
+
+
+
+/* =========================================
+            LEFT RIGHT BUTTONS
+========================================= */
+
+.slider-btn{
+
+    width:60px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    color:#fff;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:
+    0 12px 25px rgba(0,0,0,.35);
+
+}
+
+.slider-btn:hover{
+
+    background:#c49a6c;
+
+    transform:
+    scale(1.12)
+    rotate(10deg);
+
+}
+
+.left-btn{
+
+    animation:leftBtn 1s ease;
+
+}
+
+.right-btn{
+
+    animation:rightBtn 1s ease;
+
+}
+
+@keyframes leftBtn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateX(-80px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateX(0);
+
+    }
+
+}
+
+@keyframes rightBtn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateX(80px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateX(0);
+
+    }
+
+}
+
+
+
+/* =========================================
+        FLOATING GLOW EFFECT
+========================================= */
+
+.coffee-card-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:50%;
+
+    top:-100px;
+
+    right:-80px;
+
+    filter:blur(15px);
+
+    animation:glowMove 5s infinite alternate;
+
+}
+
+@keyframes glowMove{
+
+    from{
+
+        transform:
+        translateY(-15px);
+
+    }
+
+    to{
+
+        transform:
+        translateY(20px);
+
+    }
+
+}
+
+
+
+/* =========================================
+      CARD SHADOW ANIMATION
+========================================= */
+
+.coffee-card-box:hover{
+
+    box-shadow:
+
+    0 30px 60px rgba(0,0,0,.55),
+
+    0 0 40px rgba(196,154,108,.35);
+
+}
+
+
+
+/* =========================================
+      LOGO FLOAT
+========================================= */
+
+.coffee-logo{
+
+    animation:logoFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes logoFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+
+
+/* =========================================
+        FADE IN PAGE
+========================================= */
+
+.coffee-menu-page{
+
+    animation:pageFade 1.4s ease;
+
+}
+
+@keyframes pageFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+/* =========================================
+        PREMIUM SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#1a0f09;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#8b5e3c;
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#c49a6c;
+
+}
+
+/* ==========================================
+            CoffeeBug Checkout
+              ORDER.CSS
+              PART - 1
+==========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #1b1009,
+        #3b2417,
+        #6f4e37,
+        #2a1810
+    );
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    color:#fff;
+}
+
+
+/* Background Glow */
+
+.bg-circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.25;
+
+}
+
+.bg1{
+
+    width:350px;
+
+    height:350px;
+
+    background:#b57644;
+
+    top:-120px;
+
+    left:-120px;
+
+}
+
+.bg2{
+
+    width:450px;
+
+    height:450px;
+
+    background:#6f4e37;
+
+    right:-180px;
+
+    bottom:-180px;
+
+}
+
+
+
+/* ==========================================
+            ORDER PAGE
+==========================================*/
+
+.order-page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px;
+
+    position:relative;
+
+}
+
+
+
+/* Main Card */
+
+.order-card{
+
+    width:1400px;
+
+    max-width:100%;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    box-shadow:
+
+    0 30px 70px rgba(0,0,0,.45);
+
+    animation:cardAppear 1s ease;
+
+}
+
+
+
+/* ==========================================
+        LEFT PRODUCT SECTION
+==========================================*/
+
+.product-section{
+
+    width:45%;
+
+    background:
+
+    linear-gradient(
+
+        180deg,
+
+        #4b2e1f,
+
+        #2a1810
+
+    );
+
+    padding:45px;
+
+    position:relative;
+
+}
+
+
+
+/* Logo */
+
+.heading{
+
+    font-size:48px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    margin-bottom:10px;
+
+}
+
+.tagline{
+
+    color:#d7b894;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* ==========================================
+            IMAGE
+==========================================*/
+
+.product-image{
+
+    width:100%;
+
+    height:330px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    margin-bottom:30px;
+
+    box-shadow:
+
+    0 20px 45px rgba(0,0,0,.35);
+
+}
+
+
+
+.product-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+
+
+.product-image:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/* Product Name */
+
+#coffeeName{
+
+    font-size:38px;
+
+    margin-bottom:12px;
+
+}
+
+
+
+/* Description */
+
+#coffeeDescription{
+
+    line-height:1.8;
+
+    color:#e9d8c5;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* Product Info */
+
+.product-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.product-info span{
+
+    color:#c8ab88;
+
+    font-size:14px;
+
+}
+
+
+
+.product-info h4{
+
+    margin-top:8px;
+
+    font-size:18px;
+
+}
+
+
+
+/* ==========================================
+            PRICE
+==========================================*/
+
+.price-box{
+
+    font-size:40px;
+
+    font-weight:700;
+
+    color:#ffcb87;
+
+    margin-bottom:30px;
+
+}
+
+
+
+/* ==========================================
+            QUANTITY
+==========================================*/
+
+.quantity-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.quantity-box button{
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#8b5e3c;
+
+    color:#fff;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.quantity-box button:hover{
+
+    background:#c49a6c;
+
+    transform:scale(1.08);
+
+}
+
+
+
+#quantity{
+
+    width:80px;
+
+    height:55px;
+
+    text-align:center;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#fff;
+
+    color:#222;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+
+
+/* ==========================================
+            TOTAL
+==========================================*/
+
+.total-price{
+
+    font-size:28px;
+
+    font-weight:600;
+
+    color:#ffe3b0;
+
+}
+
+
+
+/* ==========================================
+        CARD ENTRY ANIMATION
+==========================================*/
+
+@keyframes cardAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        translateY(60px)
+
+        scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        translateY(0)
+
+        scale(1);
+
+    }
+
+}
+
+/* ==========================================
+        RIGHT CUSTOMER SECTION
+==========================================*/
+
+.customer-section{
+
+    width:55%;
+
+    padding:45px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(12px);
+
+    position:relative;
+
+}
+
+.customer-section h2{
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+    color:#ffffff;
+
+}
+
+.customer-section p{
+
+    color:#d8c1ab;
+
+    margin-bottom:35px;
+
+    line-height:1.7;
+
+}
+
+
+
+/* ==========================================
+            FORM
+==========================================*/
+
+#orderForm{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+
+
+/* Input Box */
+
+.input-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.input-box label{
+
+    color:#e9d8c5;
+
+    margin-bottom:10px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+
+
+/* Inputs */
+
+.input-box input,
+
+.input-box textarea{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.12);
+
+    color:#fff;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.35s;
+
+}
+
+
+
+/* Placeholder */
+
+.input-box input::placeholder,
+
+.input-box textarea::placeholder{
+
+    color:#ccb39c;
+
+}
+
+
+
+/* Focus */
+
+.input-box input:focus,
+
+.input-box textarea:focus{
+
+    background:rgba(255,255,255,.18);
+
+    box-shadow:
+
+    0 0 0 2px #c49a6c,
+
+    0 12px 25px rgba(0,0,0,.18);
+
+}
+
+
+
+/* Double Input */
+
+.double-input{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.double-input .input-box{
+
+    flex:1;
+
+}
+
+
+
+/* Textarea */
+
+textarea{
+
+    resize:none;
+
+    min-height:120px;
+
+}
+
+
+
+/* ==========================================
+        ORDER SUMMARY
+==========================================*/
+
+.order-summary{
+
+    margin-top:15px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+}
+
+.order-summary h3{
+
+    margin-bottom:20px;
+
+    color:#ffd69b;
+
+    font-size:22px;
+
+}
+
+.summary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:15px;
+
+    font-size:17px;
+
+    color:#f8ede2;
+
+}
+
+.summary-row:last-child{
+
+    margin-top:20px;
+
+    padding-top:18px;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#ffcb87;
+
+}
+
+
+
+/* ==========================================
+        PLACE ORDER BUTTON
+==========================================*/
+
+.place-order-btn{
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:linear-gradient(
+        135deg,
+        #c49a6c,
+        #8b5e3c
+    );
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    letter-spacing:1px;
+
+    transition:.4s;
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.35);
+
+}
+
+.place-order-btn:hover{
+
+    transform:
+
+    translateY(-5px)
+
+    scale(1.03);
+
+    background:linear-gradient(
+        135deg,
+        #ddb07d,
+        #b57644
+    );
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.45);
+
+}
+
+.place-order-btn:active{
+
+    transform:scale(.98);
+
+}
+
+
+
+/* ==========================================
+        PAYMENT NOTE
+==========================================*/
+
+.payment-note{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    color:#d8c1ab;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+
+/* ==========================================
+        FADE UP ANIMATION
+==========================================*/
+
+.customer-section{
+
+    animation:fadeUp .9s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ==========================================
+        FLOATING GLOW EFFECTS
+==========================================*/
+
+.order-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    background:rgba(255,255,255,.06);
+
+    border-radius:50%;
+
+    top:-120px;
+
+    right:-80px;
+
+    filter:blur(30px);
+
+    animation:glowFloat 6s ease-in-out infinite;
+
+}
+
+.order-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    background:rgba(196,154,108,.15);
+
+    border-radius:50%;
+
+    bottom:-70px;
+
+    left:-70px;
+
+    filter:blur(25px);
+
+    animation:glowFloat2 7s ease-in-out infinite;
+
+}
+
+@keyframes glowFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-25px);
+
+    }
+
+}
+
+@keyframes glowFloat2{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(25px);
+
+    }
+
+}
+
+
+
+/* ==========================================
+        IMAGE SHINE EFFECT
+==========================================*/
+
+.product-image{
+
+    position:relative;
+
+}
+
+.product-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:50%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.45),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    animation:imageShine 5s infinite;
+
+}
+
+@keyframes imageShine{
+
+    0%{
+
+        left:-120%;
+
+    }
+
+    100%{
+
+        left:170%;
+
+    }
+
+}
+
+
+
+/* ==========================================
+        BUTTON GLOW
+==========================================*/
+
+.place-order-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.place-order-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:100%;
+
+    left:0;
+
+    top:0;
+
+    background:rgba(255,255,255,.18);
+
+    transition:.5s;
+
+}
+
+.place-order-btn:hover::before{
+
+    width:100%;
+
+}
+
+
+
+/* ==========================================
+        CUSTOM SCROLLBAR
+==========================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#24140d;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#8b5e3c;
+
+    border-radius:30px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#c49a6c;
+
+}
+
+
+
+/* ==========================================
+        RESPONSIVE
+==========================================*/
+
+@media(max-width:1100px){
+
+    .order-card{
+
+        flex-direction:column;
+
+    }
+
+    .product-section,
+
+    .customer-section{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .order-page{
+
+        padding:20px;
+
+    }
+
+    .product-section,
+
+    .customer-section{
+
+        padding:25px;
+
+    }
+
+    .heading{
+
+        font-size:36px;
+
+    }
+
+    #coffeeName{
+
+        font-size:28px;
+
+    }
+
+    .price-box{
+
+        font-size:32px;
+
+    }
+
+    .product-info{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .double-input{
+
+        flex-direction:column;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .product-image{
+
+        height:240px;
+
+    }
+
+    .heading{
+
+        font-size:30px;
+
+    }
+
+    .customer-section h2{
+
+        font-size:28px;
+
+    }
+
+    .place-order-btn{
+
+        font-size:16px;
+
+        padding:15px;
+
+    }
+
+}
+/*-----        PAGE LOAD ANIMATION------*/
+@keyframes pageFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/* CoffeeBug Payment Page    PAYMENT.CSS — PART 1 */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(
+        circle at top left,
+        #6f4e37,
+        transparent 40%
+    ),
+    linear-gradient(
+        135deg,
+        #160b06,
+        #3b2115,
+        #211109
+    );
+
+    color:white;
+
+    overflow-x:hidden;
+}
+
+
+/*   PAYMENT PAGw */
+
+.payment-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:60px 25px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================================
+            BACKGROUND GLOW
+========================================== */
+
+.payment-glow{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    pointer-events:none;
+
+}
+
+.glow-one{
+
+    width:350px;
+
+    height:350px;
+
+    background:#8b5e3c;
+
+    top:-150px;
+
+    left:-100px;
+
+    opacity:.25;
+
+}
+
+.glow-two{
+
+    width:400px;
+
+    height:400px;
+
+    background:#c49a6c;
+
+    right:-180px;
+
+    bottom:-180px;
+
+    opacity:.18;
+
+}
+
+
+/* ==========================================
+            MAIN CARD
+========================================== */
+
+.payment-card{
+
+    width:1100px;
+
+    max-width:100%;
+
+    min-height:650px;
+
+    display:grid;
+
+    grid-template-columns:42% 58%;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.14);
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+
+    0 30px 80px rgba(0,0,0,.55);
+
+    position:relative;
+
+    z-index:2;
+
+    animation:paymentAppear 1s ease;
+
+}
+
+
+/* ==========================================
+            LEFT PRODUCT
+========================================== */
+
+.payment-product{
+
+    padding:45px;
+
+    background:
+    linear-gradient(
+        160deg,
+        rgba(111,78,55,.85),
+        rgba(42,24,16,.95)
+    );
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+.payment-logo h1{
+
+    font-size:38px;
+
+    letter-spacing:1px;
+
+}
+
+
+.payment-logo p{
+
+    color:#d8b894;
+
+    font-size:14px;
+
+    margin-top:3px;
+
+    margin-bottom:30px;
+
+}
+
+
+/* ==========================================
+            COFFEE IMAGE
+========================================== */
+
+.payment-coffee-image{
+
+    width:100%;
+
+    height:250px;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    background:white;
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.4);
+
+    margin-bottom:25px;
+
+}
+
+
+.payment-coffee-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+
+.payment-coffee-image:hover img{
+
+    transform:scale(1.07);
+
+}
+
+
+/* ==========================================
+            COFFEE NAME
+========================================== */
+
+.payment-product h2{
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+}
+
+
+.customer-preview{
+
+    margin-bottom:25px;
+
+}
+
+
+.customer-preview p{
+
+    font-size:13px;
+
+    color:#c9a989;
+
+}
+
+
+.customer-preview h3{
+
+    font-size:18px;
+
+    margin-top:5px;
+
+}
+
+
+/* ==========================================
+            ORDER INFO
+========================================== */
+
+.payment-order-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding-top:20px;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+}
+
+
+.payment-order-info div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+
+}
+
+
+.payment-order-info span{
+
+    font-size:13px;
+
+    color:#c9a989;
+
+}
+
+
+.payment-order-info strong{
+
+    font-size:21px;
+
+    color:#ffd29b;
+
+}
+
+
+/* ==========================================
+        RIGHT PAYMENT SECTION
+========================================== */
+
+.payment-method-section{
+
+    padding:50px;
+
+    background:rgba(20,10,5,.35);
+
+}
+
+
+.payment-method-section > h2{
+
+    font-size:36px;
+
+}
+
+
+.payment-subtitle{
+
+    color:#cdb39d;
+
+    margin-top:7px;
+
+    margin-bottom:25px;
+
+}
+
+
+/* ==========================================
+            DEMO WARNING
+========================================== */
+
+.demo-warning{
+
+    display:flex;
+
+    gap:14px;
+
+    padding:16px;
+
+    border-radius:16px;
+
+    background:rgba(255,190,90,.08);
+
+    border:1px solid rgba(255,190,90,.25);
+
+    margin-bottom:25px;
+
+}
+
+
+.demo-warning strong{
+
+    color:#ffd18c;
+
+}
+
+
+.demo-warning p{
+
+    font-size:12px;
+
+    color:#cdb9a5;
+
+    margin-top:4px;
+
+    line-height:1.6;
+
+}
+
+
+/* ==========================================
+            PAYMENT METHODS
+========================================== */
+
+.payment-methods{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:12px;
+
+    margin-bottom:25px;
+
+}
+
+
+.method-btn{
+
+    padding:15px 10px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.method-btn span{
+
+    display:block;
+
+    margin-top:6px;
+
+    font-size:13px;
+
+}
+
+
+.method-btn:hover{
+
+    transform:translateY(-3px);
+
+    background:rgba(255,255,255,.12);
+
+}
+
+
+.method-btn.active{
+
+    background:#6f4e37;
+
+    border-color:#c49a6c;
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,.25);
+
+}
